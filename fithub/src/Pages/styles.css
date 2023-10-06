@@ -1,0 +1,160 @@
+/* styles.css */
+.tab {
+  width: 90%;
+  margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+    grid-gap: 10px; /* Gap between grid items */
+    border: 1px solid #ccc; /* Add borders for better visualization */
+    padding: 10px; /* Add padding to the grid items */
+    margin-bottom: 10px; /* Add margin between grid items */
+  }
+  
+  .tab p {
+    margin: 0; /* Remove default paragraph margin */
+  }
+  
+  /* Additional styling can be added as needed */
+  .badge {
+    padding: 4px 8px; /* Adjust padding as needed */
+    background-color: #576676; /* Choose your preferred background color */
+    color: white; /* Text color for better visibility */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 14px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+    display: inline-block; /* Keep the badge on the same line */
+    margin-right: 5px; /* Add some spacing to the right of the badge */
+  }
+
+  .tab .repo-name {
+    font-weight: bold; /* Make the text bold */
+    color: orange; /* Set the text color to orange */
+    position: relative; /* Position relative for absolute pseudo-element */
+  }
+  
+  .tab .repo-name::after {
+    content: ''; /* Create a pseudo-element for the underline */
+    position: absolute; /* Position it absolutely within .repo-name */
+    left: 0; /* Start from the left */
+    bottom: -2px; /* Move it below the text */
+    width: 100%; /* Initially, the width is zero */
+    height: 2px; /* Set the underline height */
+    background-color: orange; /* Set the underline color */
+    transition: width 0.3s ease-in-out; /* Add animation for width change */
+    transform-origin: left; /* Start animation from the left */
+  }
+  
+  .tab .repo-name:hover::after {
+    width: 100%; /* Expand the width on hover */
+    transform-origin: right; /* End animation on the right */
+  }
+
+  /* Card Container */
+.card {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(27, 31, 35, 0.1);
+  margin: 10px;
+  padding: 16px;
+  background-color: #fff;
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.card-header h3 {
+  font-size: 20px;
+  margin: 0;
+  color: #0366d6;
+}
+
+/* Card Body */
+.card-body p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Links */
+.card-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.card-body a:hover {
+  text-decoration: underline;
+}
+
+/* List */
+.card-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card-body ul li {
+  margin-bottom: 6px;
+}
+
+/* Conditional Styles */
+.card-body .badge {
+  background-color: #28a745;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+.card-body .badge.orange {
+  background-color: #f66a0a;
+}
+
+/* Owner Info */
+.card-body ul.owner-info {
+  margin-top: 12px;
+}
+
+.follower-card {
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  /* margin: 10px; */
+  gap: 20px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.follower-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+.follower-info > * {
+  margin: 0 10px; /* Adjust the margin value as needed */
+}
+.follower-info a {
+  text-decoration: none;
+  color: #0366d6; /* GitHub link color */
+}
