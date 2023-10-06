@@ -5,9 +5,9 @@ import './styles.css'
 const RepoDetailpage = ({data}) => {
     let {id}=useParams()
 
-    console.log("repodata:",data)
+    // console.log("repodata:",data)
     let newdata=data.find(el=>el.id===parseInt(id,10))
-    console.log("newdata:",newdata)
+    // console.log("newdata:",newdata)
     // console.log("nameme:",name)
     const {name,html_url,description,created_at,owner,open_issues,watchers}=newdata;
   return (

@@ -8,7 +8,7 @@ const FollowersRepo = ({data}) => {
   
   useEffect(()=>{
     fetch(`https://api.github.com/users/${git}/followers`).then(res=>res.json()).then(res=>{
-      console.log("newfollowersname",res)
+      // console.log("newfollowersname",res)
       setFollower(res)
     }).catch(err=>{
       console.log(err)
@@ -22,7 +22,7 @@ const FollowersRepo = ({data}) => {
       <h1>Total Count:{follower.length}</h1>
       {follower.length>0 && follower.map(el=>{
         return <>
-        <div class="follower-card">
+        <div class="follower-card" key={el.id}>
         <img class="avatar" src={el.avatar_url} alt="Follower Avatar"/>
         <div class="follower-info">
             <strong><a href={el.html_url} target="_blank">{el.login}</a></strong>

@@ -8,14 +8,14 @@ const Follwersdetailspage = ({data}) => {
     const [len,setLen]=useState(0)
     const [fol,setFol]=useState([])
     let newdata=data.find(el=>el.id===parseInt(id,10))
-    console.log("newdata.owner.length:",newdata.owner.followers_url.length)
+    // console.log("newdata.owner.length:",newdata.owner.followers_url.length)
 
     const follow=newdata.owner.followers_url
-    console.log("fol:",fol)
+    // console.log("fol:",fol)
 
     useEffect(()=>{
         fetch(`https://api.github.com/users/${user}/followers`).then(res=>res.json()).then(res=>{
-            console.log(res)
+            // console.log(res)
             setLen(res.len)
             setFol(res)
         }).catch(err=>{
@@ -41,7 +41,7 @@ const Follwersdetailspage = ({data}) => {
         <div class="follower-info">
             <strong><a href={el.html_url} target="_blank">{el.login}</a></strong>
             {/* <strong><a href={el.html_url} target="_blank">Repo List</a></strong> */}
-            <button onClick={()=>handleList(el.id,el.login)}>Repo List</button>
+            <button onClick={()=>handleList(el.id,el.login)}>Followers List</button>
         </div>
     </div>
         </>
